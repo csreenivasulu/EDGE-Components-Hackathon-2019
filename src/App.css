@@ -1,0 +1,29 @@
+.loading-panel {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+.heading {
+    text-align: center;
+    color: #2196F3;
+}
+
+tbody {
+    display: block!important;
+    height: 65vh !important;
+    overflow: auto !important;
+}
+thead, tbody tr {
+    display:table !important;
+    width:100% !important;
+    table-layout:fixed !important;
+}
+thead {
+    width: calc( 100% - 1em ) !important;
+}
+table {
+    width:100% !important;
+}
