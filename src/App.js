@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Table from './components/table-component';
+import LoadingPanel from './components/loading-panel';
+import useGetPostsList from './api-hooks';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+const endPoint = 'https://jsonplaceholder.typicode.com/comments';
+
+function App() {
+
+  const postsList = useGetPostsList(endPoint);
+
+  return (
+    <div className="App">
+      <div className="heading">
+        <h3>Generic Table Component</h3>
       </div>
-    );
-  }
+
+      {
+        postsList.length ? <Table postsList={postsList} /> : <LoadingPanel />
+      }
+
+    </div>
+  );
+
 }
 
 export default App;
