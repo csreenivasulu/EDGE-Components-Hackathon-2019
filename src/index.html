@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Seesion Timeout</title>
+  <body>
+    
+   <timeout-notification duration="10" timeoutmessage="Your session has expired. Please log in again"  successurl="http://www.google.com" cancelurl="http://www.google.com"></timeout-notification>
+  <script>
+
+    
+    const button = document.querySelector('timeout-notification');
+
+    button.addEventListener('newEvent', (event) => {
+      
+      console.log(`"action" emitted: ${event.detail}`);
+    })
+
+    //setTimeout(() => button.label = 'Second Value', 3000);
+  </script>
+ 
+</body>
+</html>
