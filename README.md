@@ -37,7 +37,17 @@ There are two types of searching mechanisms are available here i.e global level 
 Sorting feature is available with ascending and descending order
 
 #### 4. Hide and Show the columns
-User can hide/show the specific columns by using the checkboxes which are given at the top section  
+User can hide/show the specific columns by using the checkboxes which are given at the top section
+
+#### 5. Filter the content
+To filter the column level data user should add the filter-column pipe into app.module.ts
+```
+import { FilterColumnPipe } from './custom-table/filter-column.pipe';
+```
+In declarations add like below syntax
+```
+declarations: [FilterColumnPipe]
+```
 
 ### Pass the data to table component as mentioned below
 
