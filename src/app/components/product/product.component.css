@@ -1,0 +1,36 @@
+p{display:block}
+.imgContainer{background:#fff;padding:0}
+.size-selection{padding:20px 0 10px 0;color:#525252}
+.size-selection p{color:#000}
+.size-selection h4{color:#fa527d;font-size:1em;padding-bottom:10px;text-transform: uppercase}
+.size-selection ul{list-style:none;margin:0;padding:0}
+.size-selection ul li{list-style:none;margin:0;padding:10px 5px;border-top:1px solid #ececec;transition-duration: 0.5s}
+.size-selection ul li:hover{background-color:#ececec;transition-duration: 0.5s;cursor:pointer}
+.size-selection ul li.finalPriceWrap{display:block}
+
+.finalPriceWrap span.getImage{text-transform: uppercase;font-size:0.81em;margin-top: 14px;float: left;color: #969696;}
+.finalPriceWrap span.finalPrice{font-size:2em;color:#c38c60;text-align:right;float:right}
+
+.size-selection ul li table{width:100%}
+.size-selection ul li table td.size{text-align: left}
+.size-selection ul li table td.size input{text-align: left;float:left;margin-right:10px}
+.size-selection ul li table td.size label{margin-bottom:0}
+.size-selection ul li table td.priceTag{text-align: right}
+
+/*** product-description ***/
+
+.star-rating-wrap{padding: 10px 0;display: flex;}
+.star-rating-wrap .star-rating{float:left}
+.product-description{background:#ececec;border-radius:4px;margin-top:10px}
+.product-description .prod-intro{border-bottom:1px solid #fff;padding:10px}
+.product-description .prod-intro .camera-name .iconCamera{padding-left:30px;background:url('../../../assets/images/sprite-icon.png') 0 0 no-repeat;}
+.product-description .prod-intro .camera-detail{color:#949494}
+.product-description .prod-intro .camera-detail span{padding:0 4px;color:#949494}
+.product-description .prod-intro .camera-detail span::after{content:'.'}
+
+/** Img Intro **/
+.product-description .img-intro{padding:10px}
+.product-description .img-intro table{width:100%}
+.product-description .img-intro table tr td{padding:2px 0; color:#949494}
+.product-description .img-intro table tr td.image-label{text-align:left}
+.product-description .img-intro table tr td.image-label-value{text-align:right}

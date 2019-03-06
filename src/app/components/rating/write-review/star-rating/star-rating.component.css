@@ -1,0 +1,12 @@
+.ratingWrap {position: relative;margin:0;float:left}
+.ratingWrap input {display:none;margin:0px 4px 5px 0px}
+.ratingWrap label {border: 1px solid transparent;text-indent: -1000px;width: 16px;}
+.ratingWrap div.starRating {position: absolute;cursor: pointer;top: 0;left: 0;right: 0;bottom: 0}
+.starRating{float:right;background:url("../../../../../assets/images/star-ratings-sprite.png") 0 0 no-repeat;width: 100px;height: 15px;background-size: 80px;}
+.starRating.rating0{background-position:0 0}
+.starRating.rating1{background-position:0 -15px}
+.starRating.rating2{background-position:0 -30px}
+.starRating.rating3{background-position:0 -44px}
+.starRating.rating4{background-position:0 -59px}
+.starRating.rating5{background-position:0 -74px}
+.starRating input{margin:15px 1px 5px 2px}

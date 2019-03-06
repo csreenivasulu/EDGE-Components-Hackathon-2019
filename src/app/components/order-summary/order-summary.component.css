@@ -1,0 +1,7 @@
+.order-summary-wrap{padding:10px 0;background:#ececec;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
+h3.order-summary-head{color:#000;margin:0;margin-bottom:10px;padding:0;}
+.order-summary-wrap .orderDataRow{display: block; display: flex;padding:5px 0}
+.order-summary-wrap .orderDataLabel{flex:1}
+.order-summary-wrap .orderDataValue{flex:1;text-align:right}
+.order-summary-wrap .orderDataValue.amtPayable{color:#ff7200;font-weight:bold;font-size:1.2em}
+.checkoutBtn{cursor: pointer;text-transform: uppercase;text-align: center;color: #fff; background: #000;width: 100%;padding: 10px;margin-top:20px}

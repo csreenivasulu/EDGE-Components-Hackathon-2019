@@ -1,0 +1,6 @@
+h1{margin-bottom:1em}
+h1 span{font-size:0.81em}
+.iconDelete{cursor:pointer;color:#000;text-decoration: underline;background:url("../../../assets/images/icon-remove.png") 0 0 no-repeat;width:20px;height:20px;text-indent:-1000em;display:block}
+.iconDelete:hover{background:url("../../../assets/images/icon-remove-hover.png") 0 0 no-repeat}
+.emptyMiniCart{text-align:center}
+.emptyMiniCart img{height:100px;margin-bottom:50px}

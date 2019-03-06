@@ -1,0 +1,41 @@
+<div class='review-header clearfix'>
+    <h3>Rating &amp; Reviews</h3>
+</div>
+<div class="row finalRatingCont">
+  <div class="col-xs-12 col-sm-6">
+    <div class='finalRatingWrap pull-left'>
+      <h1>{{item.finalRating}}</h1><h2>/5</h2>
+      <div class="starRating rating{{item.finalRating}}"></div>
+      <span>({{ item.review.length }} reviews)</span>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <div class="pull-right">Purchased image? <app-write-review [item]=item></app-write-review></div>
+  </div>
+</div>
+<div class='review-list'>
+  <div class='row' *ngFor='let review of item.review'>
+    <div class="col-xs-12 col-sm-2 review-snap-container">
+      <div class='gender {{review.gender}}'></div> 
+      <div>{{review.timeOfPost | date:'medium'}}</div>
+    </div>
+    <div class="col-xs-12 col-sm-10">
+      <div class='starRating rating{{review.rating}}'></div>
+      <h4>{{review.title}}</h4>
+      <p>{{review.message}}</p>
+      <p *ngIf='review.recommendation ==  1'>I would like to recommend it to my friends.</p>
+      
+      <p class='userDetails'>
+          {{review.name}}<br/>
+          {{review.email}}
+      </p>
+      <!-- <div class="review-favor"> // Need to write the code yet
+        <div class="like" (click)='likeReview()'>{{review.like}}</div>
+        <div class="dislike" (click)='dislikeReview()'>{{review.dislike}}</div>
+      </div> -->
+    </div>
+    
+    
+    
+  </div>
+</div>

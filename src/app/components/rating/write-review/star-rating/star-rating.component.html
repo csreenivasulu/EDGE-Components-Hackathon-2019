@@ -1,0 +1,7 @@
+<div class="ratingWrap">
+  <div class="starRating rating{{hoverRating}}"></div>
+   <div class="ratingWrap" *ngFor='let param of ratingParam'>
+      <input type="radio" [name]="inputName" value='param.star' [checked]="rating===param.star" />
+      <label title="{{param.title}}" (mouseover)='hoverRating = param.star' (mouseout)='hoverRating = rating'  (click)='getUserRating(param.star)'>{{param.star}} stars</label>
+   </div>
+</div>

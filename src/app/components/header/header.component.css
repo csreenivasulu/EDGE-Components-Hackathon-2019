@@ -1,0 +1,56 @@
+/**********************************
+HEADER
+**********************************/
+.navbar-inverse a.navbar-brand{font-size:20px;color:#ffde00;font-weight:700}
+header nav.navbar-inverse{border-bottom:1px solid #7a7a7a;box-shadow:0px 5px 18px 0px #888888;transition-duration:0.5s}
+header nav.navbar-inverse:hover{box-shadow:0px 10px 18px 0px #888888;transition-duration:0.5s}
+.logoWrap img.logo,.logoWrap img.logo:hover{width: 50px;float: left;padding: 15px 0}
+.logoWrap a{font-size:20px;color:#ffde00;font-weight:700;padding:11px 0;float:left}
+
+.signInFormWrap{background:#525252;width:100%;height:200px;color:#fff;clear:both;margin-bottom:1px}
+#headerRightNav{float:right;margin-top:15px}
+#headerRightNav li{display:inline-block;border-right: 1px solid #313131}
+#headerRightNav li:last-child{border-right: 1px solid transparent}
+#headerRightNav li a{color:#fff;display:block;padding:10px 20px;transition-duration: 0.5s;border-radius:4px}
+#headerRightNav li a:hover{text-shadow:1px 1px 2px #5d5d5d;background:#b1b1b1;color:#fff;display:block;padding:10px 20px;text-decoration:none;transition-duration: 0.5s}
+/*MiniCart*/
+#myMiniCart{color:#666;position:fixed;top:60px;right:20px;width:360px;background:#fff;border:1px solid #e5e5e5;padding:10px;z-index:10000}
+#myMiniCart .emptyMiniCart{text-align: center}
+#myMiniCart .emptyMiniCart img{width:50px}
+#myMiniCart .emptyMiniCart p.emptyMsg{margin:30px 0}
+.miniCart .miniCartItemWrap{max-height:282px;overflow:auto}
+.miniCart .miniCartItem{border-bottom:1px solid #e5e5e5;padding:5px 0}
+.miniCart .bag-left img{width:100%}
+.miniCart .miniCartPriceCont{padding-bottom: 10px}
+.miniCart .miniCartPrice{font-weight: bold;color:#ff7200}
+.miniCart .btnViewCart{cursor:pointer;text-transform:uppercase;text-align: center;color:#fff;background:#000;width:100%;padding:10px}
+.miniCart .iconDelete{color:#000;text-decoration: underline;background:url("../../../assets/images/icon-remove.png") 0 0 no-repeat;width:20px;height:20px;text-indent:-1000em;display:block}
+.miniCart .iconDelete:hover{background:url("../../../assets/images/icon-remove-hover.png") 0 0 no-repeat}
+.miniCart .totalPrice{font-weight:bold;text-transform: uppercase;padding:10px;text-align: right}
+.miniCart .totalPrice span{margin-left:20px;color:#ff7200;font-size: 22px}
+.miniCartClose{position:absolute;width:50px;height:50px;background:#fa527d;color:#ececec;z-index:8888;
+    display: inline-block; margin: 0 1em 1em 0;height:25px;width:50px;border-bottom-left-radius: 100px;border-bottom-right-radius: 100px;text-align: center;
+    left: 50%;bottom: -39px;cursor:pointer;transform:translate(-50%, 1px);box-shadow:0px 5px 10px #e5e5e5}
+
+    
+/**********************************
+MEDIA QUERY
+**********************************/
+@media screen and (max-width: 767px) {
+    
+}
+@media (max-width:564px){
+    .logoWrap{text-align: left; display: block;padding: 10px;}
+    .logoWrap a{float:none}
+    .navbar-toggle{position: absolute;top:-60px;right:0}
+    #headerRightNav{float:none}
+    #headerRightNav li{display:block;border-right:none;border-bottom: 1px solid #313131}
+    #headerRightNav li:last-child{border-right:none;border-bottom: 1px solid transparent}
+    #headerRightNav li a{color:#fff;display:block;padding:10px 20px;transition-duration: 0.5s;border-radius:4px}
+    #headerRightNav li a:hover{text-shadow:1px 1px 2px #5d5d5d;background:#b1b1b1;color:#fff;display:block;padding:10px 20px;text-decoration:none;transition-duration: 0.5s}
+
+    #myMiniCart {position: fixed;top: 160px;right: 10%;width: 80%}  
+}         
+@media (max-width:425px){
+
+}

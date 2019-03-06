@@ -1,0 +1,79 @@
+<header>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<div class="logoWrap">
+						<a href="#"><img src="/assets/images/logo.png"  /></a>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#headerRightNav" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<ul class='collapse navbar-collapse headerNav' id="headerRightNav">
+							<li>
+								<a href="javascript:void(0)" routerLink="/products" (click)='hideMiniCart()'>Products</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" (click)='toggleMiniCart()'>My Cart <span *ngIf='cartItemList.length > 0'>({{	cartItemList.length }})</span></a>
+							</li>
+						</ul>
+					<!-- <div class="pull-right">
+						<div class="btn clearfix" routerLink="/products" (click)='hideMiniCart()'>Products</div>
+						<div class="btn clearfix" (click)='toggleMiniCart()'>My Cart <span *ngIf='cartItemList.length > 0'>({{
+								cartItemList.length }})</span></div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div id="myMiniCart" *ngIf='showMiniCart'>
+		<div *ngIf='cartItemList.length > 0; else emptyCart'>
+			<div class="miniCart">
+				<div class='clearfix miniCartItemWrap'>
+					<div class='clearfix miniCartItem' *ngFor="let cartItem of cartItemList">
+						<div class="col-sm-4 bag-left"><img [src]="cartItem.img" /></div>
+						<div class="col-sm-8">
+							<div class='miniCartPriceCont clearfix'>
+								<div class='miniCartPrice pull-left'>
+									{{cartItem.price | currency : 'INR'}}
+								</div>
+								<div class='pull-right'>
+									<a class="iconDelete" (click)="removeCartItem(cartItem)">Delete Item</a>
+								</div>
+							</div>
+							<p>{{cartItem.name | truncate:[25, '...']}}</p>
+							<div class='miniCartPriceCont clearfix'>
+								<div class='pull-left'>size:</div>
+								<div class='pull-right'>
+									<span *ngIf='cartItem.selectedSize == "" else standardSize'>{{ cartItem.selectedSize }}</span>									
+									<ng-template #standardSize>
+										<span>Large</span>									
+									</ng-template>									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="miniCartTotalWrap clearfix">
+					<div class="totalPrice">Total: <span>{{totalPrice | currency : 'INR'}}</span></div>
+					<div class="btnViewCart" routerLink="/cart" (click)='hideMiniCart()'>VIEW BAG</div>
+				</div>
+			</div>
+		</div>
+		<ng-template #emptyCart>
+			<div ng-switch-when='false' class="emptyMiniCart">
+				<img src="/assets/images/shoppingcart-empty.png" />
+				<p class="emptyMsg">Shopping Cart is Emply!<br />Find the perfect image from our premium collections</p>
+				<p></p>
+			</div>
+		</ng-template>
+		<div class="miniCartClose" (click)='toggleMiniCart()'>X</div>
+	</div>
+</header>

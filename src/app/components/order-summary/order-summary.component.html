@@ -1,0 +1,18 @@
+<div class="row order-summary-wrap">
+  <div class="col-xs-12 col-sm-12">
+    <h3 class='order-summary-head'>Order Summary</h3>
+    <div class="orderDataRow">
+      <div class="orderDataLabel">Retail Price</div>
+      <div class="orderDataValue">{{this.totalPrice | currency : 'INR'}}</div>
+    </div>
+    <div class="orderDataRow">
+      <div class="orderDataLabel">Delivery Charges</div>
+      <div class="orderDataValue">{{this.deliveryCharge}}</div>
+    </div>
+    <div class="orderDataRow">
+      <div class="orderDataLabel">Amount Payable</div>
+      <div class="orderDataValue amtPayable">{{this.totalPrice | currency : 'INR'}}</div>
+    </div>
+    <div class='checkoutBtn'>SECURE CHECKOUT</div>
+  </div>
+</div>

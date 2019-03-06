@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-9">
+    <div class="imgContainer">
+        <img [src]="product.img" class="img-responsive" alt="product.name"/>
+    </div>    
+  </div>
+  <div class="col-xs-12 col-sm-3">
+    <h2 class='product-name'>{{ product.name }}</h2>
+    <div class="star-rating-wrap">
+      <div class="starRating rating{{product.finalRating}}"></div>
+    </div>    
+    <div class='size-selection'>
+      <h4>Purchase a license</h4>
+      <ul>
+        <li *ngFor="let size of product.size; let i=index; let last=last">
+          <table class='size-table'>
+            <tbody>
+              <tr>
+                <td class='size'>
+                  <input type="radio" [name]="sizes" [id]="size.size" [value]="size.size" [(ngModel)]='product.selectedSize' (click)='product.price=size.price' [checked]='true'  />
+                  <label [for]="size.size">{{ size.size }}</label>
+                </td>
+                <td class='priceTag'>
+                  {{ size.price | currency : 'INR'}}
+                </td>
+              </tr>
+            </tbody>
+          </table>            
+        </li>
+      </ul>
+      <div class="finalPriceWrap clearfix">
+        <span class="getImage">Get this image for </span>
+        <span class="finalPrice">{{ product.price | currency : 'INR'}}</span>
+      </div>
+    </div>
+    <div class="btnBlack" (click)="addToCart(product)">Add to cart</div>
+    <div class="product-description">
+      <div class="prod-intro">
+        <div class="camera-name"><div class="iconCamera">{{ product.details.camera }}</div></div>
+        <div class="camera-detail">{{ product.details.lense }}</div>
+        <div class="camera-detail">
+          {{ product.details.zoom }}<span></span>
+          {{ product.details.focal }}<span></span>
+          {{ product.details.shutter }}<span></span>
+          {{ product.details.iso }}
+        </div>
+      </div>
+      <div class="img-intro">
+        <table>
+          <tbody>
+            <tr><td class='image-label'>Image Type</td><td class='image-label-value'>{{ product.details.imageType }}</td></tr>
+            <tr><td class='image-label'>Resolution</td><td class='image-label-value'>{{ product.details.resolution }}</td></tr>
+            <tr><td class='image-label'>Created</td><td class='image-label-value'>{{ product.details.created }}</td></tr>
+            <tr><td class='image-label'>Uploaded</td><td class='image-label-value'>{{ product.details.uploaded }}</td></tr>
+            <tr><td class='image-label'>Category</td><td class='image-label-value'>{{ product.details.category }}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-9">
+    <app-rating [item]=product></app-rating>
+  </div>
+</div>

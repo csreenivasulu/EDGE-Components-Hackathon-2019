@@ -1,0 +1,68 @@
+/**********************************
+Main section
+**********************************/
+.outerPanel{background:#fff;padding-top:50px;position:relative;color:#000;}
+.outerWrapper{padding:30px 0}
+.outerWrapper h1{padding-bottom:0px;color:#5e8280}
+.outerWrapper h4{padding-bottom:20px;font-size:12px}
+
+.filterPane {margin:0 0 20px 0;padding:5px;background:#f5f5f5}
+.filterPane input[type="text"] {border:1px solid #cacaca;padding:4px;background:#fff;margin-right:50px;float:left;height:30px}
+.filterPane label{padding:5px 10px 2px 10px;color:#a1a1a1;font-weight:100;float:left}
+.filterPane select{width:50px;float:left;margin-right:50px;border:1px solid #cacaca;padding:4px;height:30px}
+
+/**********************************
+Product List
+**********************************/
+
+/** category filter **/
+ul.categoryFilter li{cursor:pointer;padding:5px 10px;border-bottom:1px solid #f1f1f1}
+ul.categoryFilter li:hover{background:#f3f3f3}
+
+/** Product list **/
+h2.productTitle{padding-bottom: 20px}
+.prodDetails{padding:0}
+/* h2.productTitle span{font-size:1em;text-transform: uppercase}
+ul.productList li{float:left;padding:10px 10px;margin-bottom: 50px;position:relative;transition-duration: 0.2s}
+ul.productList li:hover{background:#f2f2f2;transition-duration: 0.2s}
+ul.productList li .prodImg{margin-bottom:20px;}
+ul.productList li .prodImg img{max-width: 100%;max-height: 100%;margin: auto;border:1px solid #efefef;}
+ul.productList li a.productTitle{font-weight:bold;font-size:14px;display:block;color:#525252;padding-bottom: 5px}
+ul.productList li .productPrice{color:#212121;float:left} */
+
+.item-action-container{list-style: none;float:right}
+.item-action-container li{display:inline-block;margin:0;padding:0}
+.item-action-container li a{background:url('../../../assets/images/sprite-icon.png') 0 0 no-repeat;display: block;text-indent:-10000px}
+.item-action-container li a.icon-view-item{background-position: 1px -154px;width: 30px;height: 25px}
+.item-action-container li a.icon-add-to-cart{background-position: 7px -181px;width: 30px;height: 25px}
+
+ul.productList li:hover .BtnAddToCart{display:block}
+.BtnAddToCart{animation-duration:10s;position:absolute;display:none;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);background-color:rgba(0, 0, 0, 0.2);color:#fff;cursor:pointer;border:1px solid #fff;padding:5px 15px;text-transform: uppercase}
+.BtnAddToCart:hover{background-color:rgba(0, 0, 0, 0.7);}
+
+ul.productList li .selectSizePanel{position: absolute;left: 50%;top: 50%;-webkit-transform: translate(-50%,-50%);-ms-transform: translate(-50%,-50%);transform: translate(-50%,-50%);width:89%;background:#fff;color:#222;border:1px solid #e5e5e5;padding:5px 0;text-align:center}
+ul.productList li .selectSizePanel li{text-transform:uppercase}
+ul.productList li .selectSizePanel li:hover{color:#000}
+
+.add-tip{color:#222;text-align: center}
+.c-opt{margin:5px 0}
+.c-opt .opt-size{float: none!important;display: inline-block;box-sizing: content-box;height: 30px;padding: 3px 6px;}
+.c-opt .opt{display:none}
+.c-opt .opt-size .opt-real{color:#222;display: inline-block;min-width: 30px;height: 30px;line-height: 30px;text-align: center;border: 1px solid transparent;border-radius: 50%;text-transform: uppercase;-webkit-transition: border .9s;transition: border .2s;cursor:pointer}
+.c-opt .opt-size .opt-real:hover{border:1px solid #ccc;transition: border .2s;}
+.c-opt .opt-size .opt-real.active{border:1px solid #222;border-radius:16px;transition: border .9s;}
+
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
