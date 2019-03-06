@@ -1,0 +1,59 @@
+<div>
+  <div class="container">
+      <div class="text-center">
+          <h1>Angular - Pagination Example</h1><br><hr>
+          <nav class="navbar pull-right col-md-4">
+            <input class="form-control" type="text" name="search" [(ngModel)]="filter" placeholder="search" style="width:100%">      
+          </nav>
+          <!-- items being paged -->
+          <div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="text-center" (click)="sort('id')">Id
+                    <span class="glyphicon sort-icon" *ngIf="key =='id'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+                  <th class="text-center" (click)="sort('name')">Name
+                    <span class="glyphicon sort-icon" *ngIf="key =='name'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+                  <th class="text-center" (click)="sort('genre')">Genre
+                    <span class="glyphicon sort-icon" *ngIf="key =='genre'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr *ngFor="let item of pagedItems| orderBy: key : reverse | filter:filter;">
+                  <th class="text-center">{{item.id}}</th>
+                  <td >{{item.name}}</td>
+                  <td >{{item.genre}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- pagination bar -->
+          <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+              <li [ngClass]="{disabled:pager.currentPage === 1}">
+                  <a (click)="setPage(1)">First</a>
+              </li>
+              <li [ngClass]="{disabled:pager.currentPage === 1}">
+                  <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+              </li>
+              <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                  <a (click)="setPage(page)">{{page}}</a>
+              </li>
+              <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                  <a (click)="setPage(pager.currentPage + 1)">Next</a>
+              </li>
+              <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                  <a (click)="setPage(pager.totalPages)">Last</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</div>
+<div class="row">
+  <a href="/#/main"><button style="position: fixed;
+    bottom: 7px;
+    right: 56px;" type="button" class="btn btn-default pull-right btn-md">Back</button></a>
+</div>
