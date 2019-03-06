@@ -1,0 +1,5 @@
+This file contains a list of people who have made large contributions to the open source project.
+
+Original Design and Development By:
+Vaibhav Gupta <vaibhav.gu@hcl.com>
+, Shahkar Ahmed <shahkara@hcl.com>
