@@ -4,7 +4,7 @@
 The Table component is useful for creating custom table which having features like searching, sorting & hide/show the columns. 
 
 <p align="center">
-  
+  <img width="400" height="400" src="https://github.com/ERS-HCL/EDGE-Components-Hackathon-2019/blob/ERSEDGE022019036/Image/TableComponent.png">
 </p>
 
 ### To preview demo of Table component, [Click here](https://angular-wwpb6g.stackblitz.io/)
