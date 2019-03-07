@@ -14,3 +14,6 @@ Password Strength meter component is including a full combination of symbols, nu
 
 ### live Demo
 [Demo link](https://stackblitz.com/edit/react-ab9dqa)
+
+### Dependancies
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
