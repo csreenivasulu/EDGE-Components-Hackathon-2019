@@ -1,0 +1,64 @@
+.numericButton {
+    background-color: #FFFFFF;
+    color: #666666;
+    border: 1px solid #C9C9C9;
+    display: inline-block;
+    height: 25px;
+    line-height: 14px;
+    min-width: 25px !important;
+    padding: 4px;
+    text-align: center;
+    text-decoration: none;
+}
+.currentPageButton {
+    background-color: #686868;
+    color: #fff !important;
+    border: 1px solid #C9C9C9;
+    display: inline-block;
+    height: 25px;
+    line-height: 14px;
+    min-width: 25px !important;
+    padding: 4px;
+    text-align: center;
+    text-decoration: none;
+}
+.nextbutton {
+    background-color: #FFFFFF;
+    border: 1px solid #C9C9C9;
+    color: #666666 !important;
+    display: inline-block;
+    height: 25px;
+    line-height: 10px;
+    padding: 6px;
+    text-align: center;
+    text-decoration: none;
+    width: 60px;
+}
+#page_navigation{
+    padding-top:8px;
+   /* margin: 0 auto;
+    max-width: 450px;*/
+}
+.container #myInput{
+    margin:20px 0;
+}
+.TableHeight{
+    height: 430px;
+}
+table th{
+    width: 33.333333%;
+}
+#page_navigation{
+    float: right;
+}
+#employee, input#myInput, #page_navigation{
+        box-shadow: #ccc 0px 5px 10px;
+}
+
+/*@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+  #page_navigation{
+    margin:0 auto;
+    width: 41%;
+}
+
+}*/
