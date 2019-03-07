@@ -1,0 +1,28 @@
+.inputField {
+   text-align: center;
+   margin-top:20px; 
+
+}
+.inputPassword {
+	font-size: 13px;
+    min-width: 280px;
+    height: 30px;
+    padding-left:10px;
+    margin-bottom: 10px; 
+}
+
+.meter{
+  margin:0px auto;
+  width:280px;
+  border:1px solid #ccc;
+}
+.meter div{
+  width:10%;
+  height:5px;
+}
+.Note{
+  margin:0 auto;
+  width:280px;
+  border:1px solid #ccc;
+  padding:10px;
+}
