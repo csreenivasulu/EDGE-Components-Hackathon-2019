@@ -54,7 +54,3 @@ Below are the list of events
 Event  | Description
 --- | ---
 `onChange` | This is triggered every time user spins the Date Spinner
-
-
-
-........................................................................................................................................
