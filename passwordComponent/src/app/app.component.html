@@ -1,0 +1,13 @@
+<div id="container">
+  <h1>Password Component</h1>
+  <form [formGroup]="loginForm">
+    <div class="form-group">
+      <label>Username:</label>
+      <input formControlName="username" type="text" placeholder="Username" />
+    </div>
+
+    <password (passwordChange)="passwordChanged($event)" [passwordMatch]="true" [showLabel]="true"></password>
+    
+    <button class="btn" type="submit" [disabled]="!loginForm.valid">Register</button>
+  </form>
+</div>
