@@ -8,3 +8,9 @@ pagination component is used to separate long sets of data so that it is easier 
 
 #### Run 
 Run this component in any local server like chrome web server, xampp, wamp etc..
+
+## Password Strength Meter Component
+Password Strength meter component is used to password hardening measures such as including a full combination of symbols, numbers, uppercase and lowercase letters. This Component is developed by using reactjs.
+
+#### live Demo
+[Demo link](https://stackblitz.com/edit/react-ab9dqa)
