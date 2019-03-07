@@ -1,6 +1,9 @@
 # Social Media Feed
 Social Media Feed App based on angular 6 with Material Bootstrap.
 
+## Demo
+You may want to have a look at the demo: https://vgupta1192.github.io/social-feed/
+
 ## Adding the component in your project
 ```
 <fb-feed></fb-feed>
