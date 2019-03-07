@@ -22,14 +22,6 @@ ul.categoryFilter li:hover{background:#f3f3f3}
 /** Product list **/
 h2.productTitle{padding-bottom: 20px}
 .prodDetails{padding:0}
-/* h2.productTitle span{font-size:1em;text-transform: uppercase}
-ul.productList li{float:left;padding:10px 10px;margin-bottom: 50px;position:relative;transition-duration: 0.2s}
-ul.productList li:hover{background:#f2f2f2;transition-duration: 0.2s}
-ul.productList li .prodImg{margin-bottom:20px;}
-ul.productList li .prodImg img{max-width: 100%;max-height: 100%;margin: auto;border:1px solid #efefef;}
-ul.productList li a.productTitle{font-weight:bold;font-size:14px;display:block;color:#525252;padding-bottom: 5px}
-ul.productList li .productPrice{color:#212121;float:left} */
-
 .item-action-container{list-style: none;float:right}
 .item-action-container li{display:inline-block;margin:0;padding:0}
 .item-action-container li a{background:url('../../../assets/images/sprite-icon.png') 0 0 no-repeat;display: block;text-indent:-10000px}

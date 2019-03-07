@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { WriteReviewModel } from './write-review.model';
 import { WriteReviewService } from './write-review.service';
-import { GetdataService } from 'src/app/services/getdata.service';
+import { GetdataService } from '../../../services/getdata.service';
 import { FormGroup, FormBuilder, Validators, FormControl, FormArray } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 
@@ -31,7 +31,8 @@ export class WriteReviewComponent implements OnInit {
   get email() { return this.reviewForm.get('email')}
 
   //list of pattern
-  private pattern_email = "^[a-zA-Z0-9]{3,}$"; //alphanumeric
+  //private pattern_email = "^[a-zA-Z0-9]{3,}$"; //alphanumeric
+  private pattern_email = '/^([\w\.\+]{1,})([^\W])(@)([\w]{1,})(\.[\w]{1,})+$/'; //alphanumeric
 
   constructor(
     private WriteReviewService: WriteReviewService, 
@@ -52,7 +53,7 @@ export class WriteReviewComponent implements OnInit {
       review:['', [Validators.required, Validators.minLength(3), Validators.maxLength(500)]],
       recommendation: ['true'],
       name: ['', [Validators.required, Validators.maxLength(25)]],
-      email: ['', [Validators.required, Validators.pattern(this.pattern_email)]],
+      email: ['', [Validators.required, Validators.email]],
       gender: ['true']
     });
   }

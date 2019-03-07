@@ -35,3 +35,11 @@
 .finalRatingWrap span{padding-top:20px;display:inline-block}
 
 .userDetails{margin-top:20px;color:#909090}
+.review-favor{float:right}
+.review-favor .like, .review-favor .dislike{float:left; margin:10px}
+.review-favor .like i, .review-favor .dislike i{padding:10px;float:left; background: url('../../../assets/images/sprite-icon.png') 0 0 no-repeat;width:22px;height:22px;margin:0 5px;cursor:pointer}
+.review-favor .like i+span,.review-favor .dislike i+span{padding-top:4px}
+.review-favor .like i{background-position:0 -213px;}
+.review-favor .dislike i{background-position:-33px -213px}
+.review-favor .like i:hover{background-position:0 -240px}
+.review-favor .dislike i:hover{background-position:-33px -240px}

@@ -14,4 +14,14 @@ export class RatingComponent implements OnInit {
   ngOnInit() {
     this.getdataService.getRating(this.item)
   }
+
+  //Like review
+  likeReview(i){
+    this.getdataService.funcLikeReview(this.item.id, i)
+  }
+  
+  //dislike review
+  dislikeReview(i){
+    this.getdataService.funcDislikeReview(this.item.id, i)
+  }
 }

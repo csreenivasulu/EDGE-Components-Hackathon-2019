@@ -33,7 +33,7 @@ input:checked + .slider:before {-webkit-transform: translateX(32px);-ms-transfor
 .form-group{margin-bottom:10px}
 .btnWrap{text-align: center;clear:both}
 .btnBlack{cursor: pointer;text-transform: uppercase;text-align: center;color: #fff;background: #000;width: 100%;padding: 10px;border-radius:4px}
-.btn{padding:5px 10px;margin:10px;border:1px solid #525252 !important}
+.btn{padding: 5px 10px;margin: 10px 0 5px 10px;border: 1px solid #989898 !important;box-shadow: none;}
 .btn:hover{background:#525252;color:#fff !important;border:1px solid #fff !important}
 .navbar .btn{color:#fff}
 .navbar .btn:hover{color:#fff !important}

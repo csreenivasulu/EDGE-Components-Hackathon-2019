@@ -8,94 +8,98 @@
         <div class="row">
           <div class="col xs-12 col-sm-3 hidden-xs">
             <div class="img-container">
-                <img [src]="item.img" class="img-responsive" alt="item.name"/>
-                <p class='img-title'>{{ item.name }}</p>
-                <p class='postTime'>{{timeOfPost | date}}</p>
-                
-            </div>              
+              <img [src]="item.img" class="img-responsive" alt="item.name" />
+              <p class='img-title'>{{ item.name }}</p>
+              <p class='postTime'>{{timeOfPost | date}}</p>
+
+            </div>
           </div>
           <div class="col xs-12 col-sm-9">
-              <div class="row form-group">
-               <!--  {{ reviewForm.value | json}} -->
-                  <div class="col-xs-6 col-sm-6 reviewLabel">Rate the image</div>
-                  <div class="col-xs-6 col-sm-6 starRatingWrap">
-                    <app-star-rating class='pull-right' (userRating)='getUserRating($event)'></app-star-rating>
+            <div class="row form-group">
+              <!--  {{ reviewForm.value | json}} -->
+              <div class="col-xs-6 col-sm-6 reviewLabel">Rate the image</div>
+              <div class="col-xs-6 col-sm-6 starRatingWrap">
+                <app-star-rating class='pull-right' (userRating)='getUserRating($event)'></app-star-rating>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-xs-12">
+                <input type="text" name='reviewTitle' placeholder="Review Title" formControlName="reviewTitle"
+                  class="form-control" [class.is-invalid]='reviewTitle.invalid && reviewTitle.touched' />
+                <div *ngIf="reviewTitle.invalid && reviewTitle.touched">
+                  <div *ngIf="reviewTitle.errors ?.required" class='error-msg'>Title is required</div>
+                  <div *ngIf="reviewTitle.errors ?.minlength" class='error-msg'>Title should contain minimum 3
+                    characters</div>
+                  <div *ngIf="reviewTitle.errors ?.maxlength" class='error-msg'>Title should contain maximum 25
+                    characters</div>
+                </div>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-xs-12">
+                <input type="text" name='review' placeholder="Your review comments" formControlName="review"
+                  class="form-control" [class.is-invalid]='f.review.invalid && f.review.touched' />
+                <div *ngIf="review.invalid && review.touched">
+                  <div *ngIf="review.errors ?.required" class='error-msg'>Please provide your review</div>
+                  <div *ngIf="review.errors ?.minlength" class='error-msg'>Your message should contain minimum 3
+                    characters</div>
+                  <div *ngIf="review.errors ?.maxlength" class='error-msg'>Your message should contain maximum 500
+                    characters</div>
+                </div>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-xs-6 col-sm-9 reviewLabel">Would you recomment this to your friend?</div>
+              <div class="col-xs-6 col-sm-3">
+                <label class="recommend switch">
+                  <input type="checkbox" formControlName="recommendation">
+                  <span class="slider round">
+                    <span class="cb_on">Yes</span>
+                    <span class="cb_off">No</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-xs-12">
+                <input type="text" name='name' placeholder="Your Name" formControlName="name" class="form-control"
+                  [class.is-invalid]='f.name.invalid && f.name.touched' />
+                <div *ngIf="name.invalid && name.touched">
+                  <div *ngIf="name.errors ?.required" class='error-msg'>Your name is required</div>
+                  <div *ngIf="name.errors ?.maxlength" class='error-msg'>Your name should contain maximum 500 characters
                   </div>
                 </div>
-                <div class="row form-group">
-                  <div class="col-xs-12">
-                    <input type="text" name='reviewTitle' placeholder="Review Title" formControlName="reviewTitle" class="form-control" [class.is-invalid]='reviewTitle.invalid && reviewTitle.touched'
-                       />
-                    <div *ngIf="reviewTitle.invalid && reviewTitle.touched">
-                      <div *ngIf="reviewTitle.errors ?.required" class='error-msg'>Title is required</div>
-                      <div *ngIf="reviewTitle.errors ?.minlength" class='error-msg'>Title should contain minimum 3 characters</div>
-                      <div *ngIf="reviewTitle.errors ?.maxlength" class='error-msg'>Title should contain maximum 25 characters</div>
-                    </div>
-                  </div>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-xs-12">
+                <input type="email" name='email' placeholder="Email" formControlName="email" class="form-control"
+                  [class.is-invalid]='f.email.invalid && f.email.touched' />
+                <div *ngIf="email.invalid && email.touched">
+                  <div *ngIf="email.errors ?.required" class='error-msg'>Your email is required</div>
+                  <div *ngIf="email.errors ?.email" class='error-msg'>Please provide your valid email</div>
                 </div>
-                <div class="row form-group">
-                  <div class="col-xs-12">
-                    <input type="text" name='review' placeholder="Your review comments" formControlName="review" class="form-control" [class.is-invalid]='f.review.invalid && f.review.touched'
-                       />
-                    <div *ngIf="review.invalid && review.touched">
-                      <div *ngIf="review.errors ?.required" class='error-msg'>Please provide your review</div>
-                      <div *ngIf="review.errors ?.minlength" class='error-msg'>Your message should contain minimum 3 characters</div>
-                      <div *ngIf="review.errors ?.maxlength" class='error-msg'>Your message should contain maximum 500 characters</div>
-                    </div>
-                  </div>          
-                </div>
-                <div class="row form-group">
-                  <div class="col-xs-6 col-sm-9 reviewLabel">Would you recomment this to your friend?</div>
-                  <div class="col-xs-6 col-sm-3">
-                      <label class="recommend switch">
-                        <input type="checkbox" formControlName="recommendation">
-                        <span class="slider round">
-                          <span class="cb_on">Yes</span>
-                          <span class="cb_off">No</span>
-                        </span>
-                      </label>
-                  </div>         
-                </div>
-                <div class="row form-group">
-                  <div class="col-xs-12">
-                    <input type="text" name='name' placeholder="Your Name" formControlName="name" class="form-control" [class.is-invalid]='f.name.invalid && f.name.touched'
-                        />
-                    <div *ngIf="name.invalid && name.touched">
-                      <div *ngIf="name.errors ?.required" class='error-msg'>Your name is required</div>
-                      <div *ngIf="name.errors ?.maxlength" class='error-msg'>Your name should contain maximum 500 characters</div>
-                    </div>
-                  </div>          
-                </div>
-                <div class="row form-group">
-                  <div class="col-xs-12">
-                    <input type="text" name='email' placeholder="Email" formControlName="email" class="form-control" [class.is-invalid]='f.email.invalid && f.email.touched'
-                        />
-                    <div *ngIf="email.invalid && email.touched">
-                      <div *ngIf="email.errors ?.required" class='error-msg'>Your email is required</div>
-                      <div *ngIf="email.errors ?.pattern" class='error-msg'>Please provide your valid email</div>
-                    </div>
-                  </div>          
-                </div>
-                <div class="row form-group">
-                  <div class="col-xs-6 col-sm-9 reviewLabel">Gender</div>
-                  <div class="col-xs-6 col-sm-3">
-                      <label class="switch">
-                        <input type="checkbox" formControlName="gender">
-                        <span class="slider round">
-                          <span class="cb_on">M</span>
-                          <span class="cb_off">F</span>
-                        </span>
-                      </label>
-                  </div>         
-                </div>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-xs-6 col-sm-9 reviewLabel">Gender</div>
+              <div class="col-xs-6 col-sm-3">
+                <label class="switch">
+                  <input type="checkbox" formControlName="gender">
+                  <span class="slider round">
+                    <span class="cb_on">M</span>
+                    <span class="cb_off">F</span>
+                  </span>
+                </label>
+              </div>
+            </div>
 
           </div>
         </div>
-        
       </div>
       <div class="popupfooter">
-        <button type="submit" [disabled]="reviewForm.invalid || !reviewForm.dirty"  class="btn btn-primary">Submit</button>
-        <button type="button" (click)="getCloseConfirm()" class="btn btn-default">Close</button>
+        <button type="submit" [disabled]="reviewForm.invalid || !reviewForm.dirty" class="btn">Submit</button>
+        <button type="button" (click)="getCloseConfirm()" class="btn">Close</button>
       </div>
     </form>
   </div>
@@ -107,15 +111,14 @@
   <div class="popup" *ngIf='isCancelPopupVisible'>
     <i class='popupClose' (click)="hidePopup()">X</i>
     <h4 class="popup-title">Confirmation</h4>
-
     <div class="popupCont clearfix">
       <div class="row form-group">
         <div class="col-xs-12">Are you sure to discard the changes?</div>
       </div>
-      <div class="popupfooter">
-        <button type="button" (click)="onDiscardTrue()" class="btn btn-primary">Yes</button>
-        <button type="button" (click)="onDiscardFalse()" class="btn btn-default">No</button>
-      </div>
+    </div>
+    <div class="popupfooter">
+      <button type="button" (click)="onDiscardTrue()" class="btn">Yes</button>
+      <button type="button" (click)="onDiscardFalse()" class="btn">No</button>
     </div>
   </div>
 

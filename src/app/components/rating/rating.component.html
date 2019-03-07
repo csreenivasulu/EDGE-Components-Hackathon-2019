@@ -14,7 +14,7 @@
   </div>
 </div>
 <div class='review-list'>
-  <div class='row' *ngFor='let review of item.review'>
+  <div class='row' *ngFor='let review of item.review, let i=index'>
     <div class="col-xs-12 col-sm-2 review-snap-container">
       <div class='gender {{review.gender}}'></div> 
       <div>{{review.timeOfPost | date:'medium'}}</div>
@@ -29,10 +29,14 @@
           {{review.name}}<br/>
           {{review.email}}
       </p>
-      <!-- <div class="review-favor"> // Need to write the code yet
-        <div class="like" (click)='likeReview()'>{{review.like}}</div>
-        <div class="dislike" (click)='dislikeReview()'>{{review.dislike}}</div>
-      </div> -->
+      <div class="review-favor"> 
+        <div class="like">
+          <i (click)='likeReview(i)'></i><span>({{review.like}})</span>
+        </div>
+        <div class="dislike">
+          <i (click)='dislikeReview(i)'></i><span>({{review.dislike}})</span> 
+        </div>
+      </div>
     </div>
     
     
