@@ -1,5 +1,8 @@
-
 # Date Spinner Plugin
+
+<p align="center">
+    <img src="sample_image.png">
+</p>
 
 ## Introduction
 
