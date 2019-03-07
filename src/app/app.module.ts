@@ -18,6 +18,7 @@ import { ProductComponent } from './components/product/product.component';
 import { RatingComponent } from './components/rating/rating.component';
 import { WriteReviewComponent } from './components/rating/write-review/write-review.component';
 import { StarRatingComponent } from './components/rating/write-review/star-rating/star-rating.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const routes: Routes = [
   {path:'', component:ProductListComponent},
@@ -43,7 +44,8 @@ const routes: Routes = [
     ProductComponent,
     RatingComponent,
     WriteReviewComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

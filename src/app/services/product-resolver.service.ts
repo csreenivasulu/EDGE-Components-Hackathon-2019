@@ -19,20 +19,5 @@ export class ProductResolver implements Resolve<Product[]> {
         return item[Number(id)-1]      
       } 
     ))
-
-    /* return this.getDataService.getProduct(id).pipe(
-      map(product => {
-        console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$')
-        console.log(product)
-        return product
-        if (product) {
-          console.log(product)
-          return product;
-        } else { 
-          console.error('errr');
-          return null;
-        }
-      })
-    ); */
   }
 }

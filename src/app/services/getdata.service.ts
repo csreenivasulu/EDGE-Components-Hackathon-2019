@@ -12,24 +12,13 @@ export class GetdataService {
   private subscription: Subscription;
   public getProductList: any = [];
   public finalRating: number = 0;
+  public totalLike: number = 0;
   updatedProductList = new Subject<Product[]>();
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this._url);
   }
-
-  /* getList() {
-    this.getProducts().subscribe(
-      (data) => {
-        this.getProductList = data;
-      }
-    );
-
-    for(let i=0; i < this.getProductList.length; i++) {
-      console.log('item');
-    }
-  } */
 
   //get overall rating
   getRating(item) {
@@ -49,6 +38,18 @@ export class GetdataService {
     this.updatedProductList.next(this.getProductList);
   }
 
+  // Like the existing review
+  funcLikeReview(id, reviewId) {
+    this.getProductList.productItems[id-1].review[reviewId].like = this.getProductList.productItems[id-1].review[reviewId].like + 1;
+    this.updatedProductList.next(this.getProductList);
+  }
+
+  //dislike the existing review
+  funcDislikeReview(id, reviewId) {
+    this.getProductList.productItems[id-1].review[reviewId].dislike = this.getProductList.productItems[id-1].review[reviewId].dislike + 1;
+    this.updatedProductList.next(this.getProductList);
+  }
+
 
    funcGetProductList() {  //Called @ Product-list
     this.subscription = this.getProducts().subscribe(
@@ -62,10 +63,5 @@ export class GetdataService {
   getProduct<Product>() { 
     return of(this.getProductList.productItems);
   }
- /*  getProduct<Product>(id) { 
-    console.log(this.getProductList)
-    return of(this.getProductList.find(item => item.id === id));
-  } */
-  
-  
+
 }
