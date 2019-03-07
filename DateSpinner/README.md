@@ -32,6 +32,7 @@ var myDateSpinner = new dateSpinner.setSpinner({
 ## Documentation
 ### Options
 Below are the list of options
+
 |Option | Default | Description|
 |--- | --- | ---|
 |`selector` | This is Mandatory | Gets the HTML tag by id to initiate the plugin at|
@@ -41,6 +42,7 @@ Below are the list of options
 
 ### Methods
 Below are the list of methods
+
 Method  | Description
 --- | ---
 `getDate()` |  Get the current Date
@@ -48,6 +50,7 @@ Method  | Description
 
 ### Events
 Below are the list of events
+
 Event  | Description
 --- | ---
 `onChange` | This is triggered every time user spins the Date Spinner
