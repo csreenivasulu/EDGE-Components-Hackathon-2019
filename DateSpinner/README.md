@@ -32,12 +32,12 @@ var myDateSpinner = new dateSpinner.setSpinner({
 ## Documentation
 ### Options
 Below are the list of options
-Option | Default | Description
---- | --- | ---
-`selector` | This is Mandatory | Gets the HTML tag by id to initiate the plugin at
-`defaultDate` | `null` | Initiate the Date Spinner with a default date, e.g. 'Mar-15-1990'
-`dateFormat` | MMM-DD-YYYY | Date format for the spinner. Other Example: 'M-D-YY'
-`yearStart` | 1900 | This is the initial year from where you want the Year Spinner to start from.
+|Option | Default | Description|
+|--- | --- | ---|
+|`selector` | This is Mandatory | Gets the HTML tag by id to initiate the plugin at|
+|`defaultDate` | `null` | Initiate the Date Spinner with a default date, e.g. 'Mar-15-1990'|
+|`dateFormat` | MMM-DD-YYYY | Date format for the spinner. Other Example: 'M-D-YY'|
+|`yearStart` | 1900 | This is the initial year from where you want the Year Spinner to start from.|
 
 ### Methods
 Below are the list of methods
