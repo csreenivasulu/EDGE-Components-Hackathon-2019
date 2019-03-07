@@ -3,4 +3,4 @@ pagination component is used to separate long sets of data so that it is easier 
 # Output format in Desktop view
 <p align='center'><img src="./desktop-view.PNG" /></p>
 # Output format in Mobile view
-<p align='center'><img src="./timeout-desktop.PNG" /></p>
+<p align='center'><img src="./Mobile view.PNG" /></p>
