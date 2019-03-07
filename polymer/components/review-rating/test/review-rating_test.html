@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>progress-stepper test</title>
+
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../node_modules/wct-browser-legacy/browser.js"></script>
+
+    <script type="module" src="/review-rating.js"></script>
+  </head>
+  <body>
+
+    <test-fixture id="reviewRatingFixture">
+      <template>
+        <review-rating></review-rating>
+      </template>
+    </test-fixture>
+
+    <script type="module">
+
+      suite('review-rating component tests', () => {
+        let $el;
+          setup(() => {
+            $el = fixture('reviewRatingFixture');
+          });
+        suite('when review-rating component initializes', () => {
+          test('component shadow dom should exist', () => {
+            expect($el.shadowRoot).to.be.defined;
+          });
+
+          test('ratings property is set', () => {
+            expect($el.ratings).to.be.defined;
+            expect($el.ratings).not.to.be.empty;
+            expect($el.ratings.length).to.equal(5);
+          }); 
+
+          test('currentRating property should set to 0', () => {
+            expect($el.currentRating).to.equal(0);
+          });
+
+          test('isFeedbackAvailable property should set to false', () => {
+            expect($el.isFeedbackAvailable).to.be.false;
+          });
+
+          test('maxFeedbackLength property should set to 150', () => {
+            expect($el.maxFeedbackLength).to.equal(150);
+          });
+
+          test('language property should set to en', () => {
+            expect($el.language).to.equal('en');
+          });
+
+          test('resources property should set', () => {
+            expect($el.resources).to.be.defined;
+            expect($el.resources).not.to.be.empty;
+          });
+        });
+
+        suite('when openDialog() method is invoked', () => {
+          test('should set opened property of dialog to true', () => {
+            $el.openDialog();
+            expect($el.shadowRoot.querySelector('#dialog').opened).to.be.true;
+          });
+          test('should dispatch feedback-submitted event', () => {
+            const stub = sinon.stub($el, 'dispatchEvent');
+            $el.openDialog();
+            expect(stub.calledOnce).to.be.true;
+          });
+        });
+
+        suite('when closeDialog() method is invoked', () => {
+          test('should set opened property of dialog to false', () => {
+            $el.closeDialog();
+            expect($el.shadowRoot.querySelector('#dialog').opened).to.be.false;
+          });
+        });
+
+        suite('when resetRating() method is invoked', () => {
+          test('currentRating is zero, should return', () => {
+            $el.currentRating = 0;
+            let status = $el.resetRating();
+            expect(status).to.be.empty; 
+          });
+
+          test('currentRating is greater than zero, should reset current rating to 0', () => {
+            const notifyStub = sinon.stub($el, 'notifyPath');
+            const setStub = sinon.stub($el, 'set');
+            $el.currentRating = 1;
+            let status = $el.resetRating();
+            expect(notifyStub.calledOnce).to.be.true;
+            expect(setStub.calledOnce).to.be.true;
+            expect(setStub.calledOnce).to.be.true;
+            expect($el.feedbackText).to.be.empty;
+            expect($el.isFeedbackAvailable).to.be.false;
+          });
+        });
+        
+        suite('when ratings model changed', () => {
+          test('should invoked _ratingsChanged()', () => {
+            const stub = sinon.stub($el, '_ratingsChanged');
+            $el.ratings[0].checked = false;
+            $el.notifyPath('ratings.0.checked');
+            expect(stub.calledOnce).to.be.true;
+          });
+
+          test('should set isFeedbackAvailable property to true', () => {
+            $el.ratings[0].checked = false;
+            $el.notifyPath('ratings.0.checked');
+            expect($el.isFeedbackAvailable).to.be.true;
+          });
+          
+          test('should set currentRating property to 5 when higest rating is selected', () => {
+            $el.ratings[0].checked = true;
+            $el.notifyPath('ratings.0.checked');
+            expect($el.currentRating).to.equal('5');
+          });
+        });
+      });
+
+
+
+
+    </script>
+
+  </body>
+</html>

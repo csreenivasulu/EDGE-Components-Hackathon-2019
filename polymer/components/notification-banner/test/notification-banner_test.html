@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>notification-banner test</title>
+
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script src="../node_modules/web-animations-js/web-animations-next-lite.min.js"></script>
+
+  <script src="../node_modules/wct-browser-legacy/browser.js"></script>
+
+  <script type="module" src="../notification-banner.js"></script>
+</head>
+
+<body>
+
+  <test-fixture id="banner">
+    <template>
+      <notification-banner></notification-banner>
+    </template>
+  </test-fixture>
+
+
+  <script>
+      suite('notification-banner component tests', () => {
+        let $el;
+        setup(() => {
+          $el = fixture('banner');
+        });
+
+        suite('notification-banner component initially loads', () => {
+          test('shadowRoot of the component should present', () => {
+            const elementShadowRoot = $el.shadowRoot;
+            expect(elementShadowRoot).to.exist;
+          });
+
+          test('isVisible property default set to false', () => {
+            expect($el.isVisible).to.be.false;
+          });
+
+          test('toastTimeout property default set to 5000', () => {
+            expect($el.toastTimeout).to.equal(5000);
+          });
+
+        });
+
+        suite('when toast property changes', () => {
+          let toast;
+          let fakeTimer;
+          setup(() => {
+            toastDialog = $el.shadowRoot.querySelector('#toast');
+            fakeTimer = sinon.useFakeTimers();
+          });
+          test('should invoke _toastChanged', () => {
+            const stub = sinon.stub($el, '_toastChanged');
+            $el.toast = true;
+            expect(stub.calledOnce).to.be.true;
+          });
+
+          test('toast dialog opened set to true', () => {
+            $el.toast = true;
+            expect(toastDialog.opened).to.be.true;
+          });
+
+           test('should call setTimeout', () => {
+              const stub = sinon.stub(window, 'setTimeout');
+              $el.toast = true;
+              expect(stub.calledOnce).to.be.true;
+          });
+
+          test('should call setTimeout', (done) => {
+              const eventStub = sinon.stub($el, 'dispatchEvent');
+              $el.toast = true;
+              fakeTimer.tick(5000);
+              flush(() => {
+                expect($el.toast).to.be.false;
+                expect(toastDialog.opened).to.be.false;
+                expect(eventStub.calledOnce).to.be.true;
+                done();
+              });
+          });
+        });
+
+        suite('when type property changes', () => {
+          test('type is set to success', () => {
+            $el.type = 'success';
+            expect($el.className).to.equal('success');
+            expect($el.iconType).to.equal('check');
+            
+          });
+           test('type is set to error', () => {
+            $el.type = 'error';
+            expect($el.className).to.equal('error');
+            expect($el.iconType).to.equal('error');
+          });
+           test('type is set to warning', () => {
+            $el.type = 'warning';
+            expect($el.className).to.equal('warning');
+            expect($el.iconType).to.equal('warning');
+          });
+           test('type is set to info', () => {
+            $el.type = 'info';
+            expect($el.className).to.equal('info');
+            expect($el.iconType).to.equal('info');
+          });
+           test('type is set to custom', () => {
+            $el.type = 'custom';
+            expect($el.className).to.equal('custom');
+          });
+        });
+    });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>notification-banner demo</title>
+
+    <script src="../../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../../../node_modules/web-animations-js/web-animations-next-lite.min.js"></script>
+
+    <script type="module">
+      import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
+      import '@polymer/iron-demo-helpers/demo-snippet';
+      import '@polymer/paper-button/paper-button';
+    </script>
+
+    <script type="module" src="../notification-banner.js"></script>
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+      <style>
+      .custom {
+        margin: 10px;
+      }
+      paper-button.indigo {
+          background-color: var(--paper-indigo-500);
+          color: #ffffff;
+          --paper-button-raised-keyboard-focus: {
+            background-color: var(--paper-pink-a200) !important;
+            color: #ffffff !important;
+          };
+      }
+    paper-button.red {
+        background-color: var(--google-red-700);
+        color: #ffffff;
+        --paper-button-raised-keyboard-focus: {
+          background-color: var(--paper-pink-a200) !important;
+          color: #ffffff !important;
+        };   
+    }
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>A Polymer 3.0 based Notification and Toast Component Demo</h3>
+      <demo-snippet>
+        <template>
+          <notification-banner id="demoId"></notification-banner>
+        </template>
+      </demo-snippet>
+    </div>
+    <notification-banner id="notificationBanner"></notification-banner>
+    <paper-button raised class="custom indigo" onClick="showSuccessBanner()">Success Banner</paper-button>
+    <paper-button raised class="custom red" onClick="showErrorBanner()">Error Banner</paper-button>
+    <paper-button raised class="custom red" onClick="showInfoBanner()">Info Banner</paper-button>
+    <paper-button raised class="custom red" onClick="showWarningBanner()">Warning Banner</paper-button>
+    <paper-button raised class="custom indigo" onClick="showToast()">Toast</paper-button>
+    <script>
+      const banner = document.getElementById('notificationBanner');
+      
+      function showSuccessBanner() {
+        banner.type = "success";
+        banner.text = "success message";
+        banner.opened = true;
+      }
+
+      function showErrorBanner() {
+        banner.type = "error";
+        banner.text = "error message";
+        banner.opened = true;
+      }
+
+      function showInfoBanner() {
+        banner.type = "info";
+        banner.text = "info message";
+        banner.opened = true;
+      }
+      
+      function showWarningBanner() {
+        banner.type = "warning";
+        banner.text = "warning message";
+        banner.opened = true;
+      }
+      
+      function showToast() {
+        banner.toastPosition="top-left";
+        banner.text = "toast message";
+        banner.toast = true;
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>Rating Review demo</title>
+
+    <script src="../../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../../../node_modules/web-animations-js/web-animations-next-lite.min.js"></script>
+    <link rel="stylesheet" href="../../../node_modules/font-awesome/css/font-awesome.css">
+    
+
+    <script type="module">
+      import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
+      import '@polymer/iron-demo-helpers/demo-snippet';
+    </script> 
+
+    <script type="module" src="../review-rating.js"></script>
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles"></style>
+      <style>
+        html {
+          --review-rating-star-icon-color: red;
+        }
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      
+      <h3>A polymer 3.0 Rating and Review Component Demo</h3>
+      <demo-snippet>
+        <template>
+          <review-rating></review-rating>
+        </template>
+      </demo-snippet>
+      <review-rating id="review">
+        <span slot="slot-1">Aweful</span>
+        <span slot="slot-2">Good</span>
+        <span slot="slot-3">Very Good</span>
+        <span slot="slot-5">Awesome</span>
+        <span slot="slot-4">Excellent</span>
+      </review-rating>
+    </div>
+    <script>
+      document.querySelector('#review').addEventListener('feedback-submitted', (event) => {
+        console.log(event.detail);
+      });
+    </script>
+  </body>
+</html>
